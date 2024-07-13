@@ -74,7 +74,7 @@ const CurrencyConverter = () => {
     (currency) => !itemsToMoveToTop.includes(currency)
   );
 
-  // ARRAY TOPOVANYCH A VYMAZANYCH
+  // ARRAY TOPOVANYCH A VYMAZANYCH 
   const sortedCurrencies = [...itemsToMoveToTop, ...remainingCurrencies];
 
   // ZAZNAMENA VPISANE CISLA

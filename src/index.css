@@ -298,6 +298,10 @@ input:focus {
 }
 
 @media screen and (max-width: 420px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
   .alert {
     font-size: 12px;
 
