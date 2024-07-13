@@ -239,7 +239,7 @@ const CurrencyConverter = () => {
               pattern="[0-9]*"
               min="0"
               value={convertCurrency()}
-              disabled
+              style="pointer-events: none;"
             ></input>
           </div>
         </div>
