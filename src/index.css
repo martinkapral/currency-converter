@@ -298,14 +298,21 @@ input:focus {
 }
 
 @media screen and (max-width: 420px) {
-  h1 {
-    font-size: 1.4rem;
-  }
-
   .alert {
     font-size: 12px;
 
     left: 51%;
+  }
+}
+
+@media screen and (max-width: 416px) {
+  .selection1 {
+    top: -10px;
+    height: 400px;
+  }
+  .selection1 {
+    top: -10px;
+    height: 400px;
   }
 }
 
