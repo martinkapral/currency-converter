@@ -1,13 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif;
+  background: rgb(207, 255, 174);
+  background: linear-gradient(
+    135deg,
+    rgba(207, 255, 174, 1) 0%,
+    rgba(226, 255, 204, 1) 25%,
+    rgba(237, 252, 225, 1) 100%
+  );
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  max-width: 500px;
+  height: inherit;
+  text-align: center;
+  align-content: center;
+  padding: 1rem;
+
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  box-shadow: 0 2px 5px #dad8d8;
+  border-radius: 1rem;
+  background-color: #fefefe;
+}
+
+h1 {
+  color: #2c6a00;
+  font-size: 2rem;
+}
+
+.container {
+  display: grid;
+  position: relative;
+  margin: 1rem;
+}
+
+.from-currency {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  gap: 0.5rem;
+}
+
+.from-currency img {
+  width: 2.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid #dad8d8;
+  margin-left: 0.5rem;
+  margin-right: 0.8rem;
+}
+
+.to-currency {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  gap: 0.5rem;
+}
+
+.to-currency img {
+  width: 2.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid #dad8d8;
+  margin-left: 0.5rem;
+  margin-right: 0.8rem;
+}
+
+button {
+  color: #2c6a00;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 74px;
+  left: 70px;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  padding-top: 4.5px;
+  padding-left: 5px;
+  box-shadow: 0px 0px 3px 3px #b3df91;
+
+  background-color: #c4f0a3;
+
+  border: none;
+  border-radius: 50%;
+  rotate: 90deg;
+  cursor: pointer;
+}
+
+button span {
+  rotate: 90deg;
+  transition: inherit;
+}
+
+button:hover {
+  rotate: 270deg;
+  transition: 0.3s;
+  background-color: #b3df91;
+}
+
+h3 {
+  margin-top: 2rem;
+  color: #2c6a00;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+
+  margin-top: 1rem;
+
+  border: 1px solid #dad8d8;
+  border-radius: 1rem;
+  text-align: center;
+  width: 100%;
+
+  background-color: #f2f2f2;
+}
+
+input:focus {
+  outline: none;
+}
+
+.selector {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+
+  z-index: 1;
+  border: none;
+  padding: 1rem;
+  width: 250px;
+  border: 1px solid #dad8d8;
+  border-radius: 1rem;
+
+  margin-bottom: 0rem;
+  background-color: #f2f2f2;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select {
+  display: none;
+}
+
+.down {
+  font-size: 2rem;
+
+  padding: 0;
+}
+
+.selection1 {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  top: 30px;
+  left: 0;
+  max-width: inherit;
+  height: 360px;
+  text-align: start;
+  padding: 0rem 0rem;
+  margin: auto;
+
+  border-radius: 1rem;
+  background-color: #fefefe;
+  overflow: scroll;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.selection1::-webkit-scrollbar {
+  display: none;
+}
+
+.selection2 {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  top: 30px;
+  left: 0;
+  max-width: inherit;
+  height: 360px;
+  text-align: start;
+  padding: 0rem 0rem;
+  margin: auto;
+
+  border-radius: 1rem;
+  background-color: #fefefe;
+  overflow: scroll;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.selection2::-webkit-scrollbar {
+  display: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.option img {
+  margin-right: 1rem;
+}
+
+.option strong {
+  margin-right: 1rem;
+}
+
+.options h3 {
+  text-align: center;
+}
+
+.options-header {
+  background-color: #fefefe;
+  height: 50px;
+  padding-bottom: 1rem;
+
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+.options-header .back {
+  color: rgb(98, 98, 98);
+  padding-top: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.options-header .back:hover {
+  color: rgb(0, 0, 0);
+  padding-top: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .from-currency img {
+    width: 2rem;
+  }
+
+  .to-currency img {
+    width: 2rem;
+  }
+
+  input {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
 }
