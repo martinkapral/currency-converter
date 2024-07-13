@@ -259,6 +259,13 @@ input:focus {
   cursor: pointer;
 }
 
+.alert {
+  position: absolute;
+  top: -0.5rem;
+  left: 47.5%;
+  color: red;
+}
+
 @media screen and (max-width: 500px) {
   h1 {
     font-size: 1.8rem;
@@ -279,5 +286,25 @@ input:focus {
   input {
     font-size: 1.8rem;
     font-weight: 500;
+  }
+
+  .alert {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .alert {
+    font-size: 12px;
+
+    left: 51%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .alert {
+    font-size: 12px;
+    top: -1.1rem;
+    left: 51%;
   }
 }

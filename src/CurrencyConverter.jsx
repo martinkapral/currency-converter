@@ -14,6 +14,8 @@ const CurrencyConverter = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
+  const [alert, setAlert] = useState(false);
+
   const apiKey = "a69ed711718738087e4f0ae4";
 
   //FETCHING - KURZY MIEN A JEDNOTLIVE MENY Z API
@@ -61,11 +63,11 @@ const CurrencyConverter = () => {
     "CZK",
     "EUR",
     "USD",
-    "PLN",
-    "HUF",
     "GBP",
     "CAD",
     "AUD",
+    "PLN",
+    "HUF",
   ];
 
   const remainingCurrencies = removedCurrencies.filter(
@@ -99,6 +101,16 @@ const CurrencyConverter = () => {
   // VYPOCET KONVERZIE
   const convertCurrency = () => {
     return (amount * exchangeRate).toFixed(2);
+  };
+
+  // ALERT KED UZIVATEL ZADA NEVALIDNY VSTUP (V TOMTO PRIPADE PISMENO)
+  const handleKeyPress = (e) => {
+    const charCode = e.charCode;
+    if (charCode < 48 || charCode > 57) {
+      e.preventDefault();
+      setAlert(true);
+      setTimeout(() => setAlert(false), 2000);
+    }
   };
 
   // CUSTOM DROPDOWNS
@@ -189,11 +201,15 @@ const CurrencyConverter = () => {
               isOpen={isOpen1}
             />
             <input
-              type="number"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
               min="0"
               value={amount}
               onChange={handleAmountChange}
+              onKeyPress={handleKeyPress}
             />
+            {alert && <div className="alert">Please enter only numbers</div>}
           </div>
           <button onClick={handleSwapCurrencies}>
             <span>
@@ -216,7 +232,13 @@ const CurrencyConverter = () => {
               onSelect={handleToCurrencyChange}
               isOpen={isOpen2}
             />
-            <input type="number" min="0" value={convertCurrency()}></input>
+            <input
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              min="0"
+              value={convertCurrency()}
+            ></input>
           </div>
         </div>
       </div>
