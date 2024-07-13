@@ -16,7 +16,7 @@ const CurrencyConverter = () => {
 
   const [alert, setAlert] = useState(false);
 
-  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = "a69ed711718738087e4f0ae4";
 
   //FETCHING - KURZY MIEN A JEDNOTLIVE MENY Z API
   useEffect(() => {
