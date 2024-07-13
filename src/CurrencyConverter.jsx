@@ -233,11 +233,13 @@ const CurrencyConverter = () => {
               isOpen={isOpen2}
             />
             <input
+              className="input-disabled"
               type="text"
               inputMode="numeric"
               pattern="[0-9]*"
               min="0"
               value={convertCurrency()}
+              disabled
             ></input>
           </div>
         </div>
