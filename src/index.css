@@ -303,6 +303,12 @@ input:focus {
 
     left: 51%;
   }
+  .selector {
+    width: 100%;
+  }
+  .input {
+    width: inherit;
+  }
 }
 
 @media screen and (max-width: 416px) {
